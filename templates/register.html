@@ -1,0 +1,20 @@
+{% extends "layout.html" %} {% block title %} register {% endblock %} {% block main %}
+<div class="login">
+    <form class="contact_form" action="/register" method="post">
+        <div class="logo">
+            <img src="../static/images/1505657.png">
+        </div>
+        <div>
+            <input type="text" name="username" placeholder="username"><br>
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="password"><br>
+        </div>
+        <div>
+            <input type="password" name="confirmation" placeholder="confirm password"><br>
+        </div>
+        <input type="submit" class="my-btn" value="register">
+        <p class="title text-muted">already a member? &nbsp; <a class="danger" href="/login">login</a></p>
+    </form>
+</div>
+{% endblock %}

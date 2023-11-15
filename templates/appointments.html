@@ -1,0 +1,35 @@
+{% extends "layout.html" %} {% block title %} appointments {% endblock %} {% block main %}
+<!--=============== table=================-->
+<div class="title text-muted">
+    <h2>my booking table</h2>
+</div>
+<div class="recent-orders">
+    <table ">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>brand</th>
+                    <th>date</th>
+                    <th>service</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows%}
+                    <tr>
+                        <td>{{row["name"]}}</td>
+                        <td>{{row["brand"]}}</td>
+                        <td>{{row["date"]}}</td>
+                        <td>{{row["service"]}}</td>
+                        <td>
+                            <form action="/delete" method="post">
+                                <input name="id" type="hidden"  value="{{row[ "id"]}} ">
+                                <input class="danger" type="submit" value="cancel">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor%}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+  login
+{% endblock %}
+{% block main %}
+    <div class="login">
+        <form class="contact_form" action="/login" method="post">
+            <div class="logo">
+                <img src="../static/images/1505657.png" >
+            </div>
+            <div>
+                <input type="text" name = "username" placeholder="username"><br>
+            </div>
+            <div>
+                <input type="password" name ="password" placeholder="password"><br>
+            </div>
+            <input type="submit" class="my-btn" value="log in"> 
+            <p class="title text-muted">not a member yet ? &nbsp; <a class="danger" href="/register">register</a></p>
+        </form>
+    </div>
+{% endblock %}

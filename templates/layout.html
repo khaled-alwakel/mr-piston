@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- font awesome-->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <!--material icon-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Two+Tone|Material+Icons+Sharp">
+    
+    <!-- css files  -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="/static/style.css">
+
+    <title>{% block title %}MR PISTON{% endblock %}</title>
+</head>
+<body>
+    
+<div class="container">
+    <aside>
+        <div class="top">
+            <div class="logo">
+                <img src="../static/images/1505657.png" alt="logo">
+                <h2 >MR &nbsp;<span class="danger">PISTON</span> </h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+            
+        </div>
+        <div class="sidebar">
+            <a href="/" class=" active">
+                <span class="material-icons-sharp">home</span>
+                <h3>Home</h3>
+            </a>
+         
+            <a href="/services">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Services</h3>
+            </a>
+            <a href="parts">
+                <span class="material-icons-sharp">inventory_2</span>
+                <h3>Products</h3>
+           </a>
+        
+       
+           {% if session["user_id"]%}
+           <a href="/fav">
+                <span class="material-icons-sharp">shopping_cart_checkout</span>
+                <h3>My Cart</h3>
+            </a>
+            <a href="/appointment">
+                    <span class="material-icons-sharp">book_online</span>
+                    <h3>Book Now</h3>
+                    
+                </a>
+                <a href="/appointments">
+                    <span class="material-icons-sharp">table_view</span>
+                    <h3>My Bookings</h3>
+                </a>
+            
+            
+                <a href="/settings">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a> 
+            
+                <a href="/logout" class="btn">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            {% else%}
+            <a href="/login" class="btn">
+                <span class="material-icons-sharp">login</span>
+                <h3>Login</h3>
+            </a>
+            {% endif%}
+               
+            <a href="/">
+                <span class="material-icons-sharp">copyright</span>
+                <h3>MR PISTON</h3>
+            </a>
+        </div>
+    </aside>
+    <main >
+        {% block main %}{% endblock %}
+    </main>
+    <div class="right">
+        <div class="top">
+             <button id="menu-btn">
+                  <span class="material-icons-sharp">menu</span>
+             </button>
+        </div> <!-- end top-->
+       
+            <!--services-->
+            <div class="services">
+                <h2>Special Services</h2>
+                <div class="item home">
+                    <div class="icon">
+                        <span class="material-icons-sharp">home</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3> HOME MAINTENANCE</h3>
+                            <small class="text-muted">just relax and it'll be done</small>
+                            <h3>012 345 6789</h3>
+                        </div>
+                        <h5 class="success">+10% coast</h5>
+                    </div>
+                </div>
+                <div class="item outdoor">
+                    <div class="icon">
+                        <span class="material-icons-sharp">signpost</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>OUTDOOR SERVICES</h3>
+                            <small class="text-muted">we'll reach you anywhere</small>
+                            <h3>012 345 6789</h3>
+                        </div>
+                        <h5 class="primary">+20% coast</h5>
+                    </div>
+                </div>
+                <div class=" item emergency">
+                    <div class="icon">
+                        <span class="material-icons-sharp">battery_alert</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>EMERGENCY SERVICES</h3>
+                            <small class="text-muted">24 / 7</small>
+                            <h3>012 345 6789</h3>
+                        </div>
+                        <h5 class="danger">+30% coast</h5>
+                        
+                    </div>
+                </div>
+
+            </div>
+             <!--find us-->
+        <div class="find_us">
+            <h2>Find Us</h2>
+            <div class="informations">
+                <div class="info">
+                    <div class="icon">
+                        <span class="material-icons-sharp">alternate_email</span>
+                    </div>
+                    <div class="message">
+                        <p><b>mrpiston@gmail.com</b></p>
+                        <p><b>mrpiston@proton.com</b></p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="icon">
+                        <span class="material-icons-sharp">phone_enabled</span>
+                    </div>
+                    <div class="message">
+                        <p><b>  (123) 231-43432  </b></p>
+                        <p><b> (123) 464-92733  </b></p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="icon">
+                        <span class="material-icons-sharp">pin_drop</span>
+                    </div>
+                    <div class="message">
+                        <p><b> 23 state Street-cairo.Egypt</b></p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <span><i class="fab fa-facebook-f"></i></span>
+                    <span><i class="fab fa-twitter"></i></span>
+                    <span><i class="fab fa-youtube"></i></span>
+                   <span><i class="fab fa-instagram"></i></span>
+             </div>
+            </div> 
+        </div>
+    </div>
+</div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}
+  settings
+{% endblock %}
+{% block main %}
+
+ 
+     <div>
+            <form  class="contact_form" action="/update_name" method="post">
+                <h2>change username</h2>
+                <div>
+                    <input type="text" name = "old-username" placeholder="old username"><br>
+
+                </div>
+                <div>
+                    <input type="text" name = "new-username" placeholder="new username"><br>
+
+                </div>
+                <div>
+                    <input type="text" name = "confirmation" placeholder="confirm new username"><br>
+                </div>
+                <input  type="submit" class="submit">
+            </form>
+        </div>
+
+        <div>
+            <form  class="contact_form" action="/update_pass" method="post">
+                <h2>change password</h2>
+                <div>
+                    <input type="password" name ="old-password" placeholder="old password"><br>
+                </div>
+                <div>
+                    <input type="password" name ="new-password" placeholder="new password"><br>
+                </div>
+                <div>
+                    <input type="password" name ="confirmation" placeholder="confirm new password"><br>
+                </div>
+                <input type="submit" class="update-data">
+            </form>
+        </div>
+
+{% endblock %}

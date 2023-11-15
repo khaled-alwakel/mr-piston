@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="title text-muted">
+    <h2>our products</h2> 
+</div>
+    <div class="insights parts">
+        {% for row in rows %}
+            <div class="one">
+                <h2 class="cap">{{ row["part"] }}</h2>
+                <div class="middle">
+                    <div class="lef">
+                        <h1>{{row["price"]}} $</h1>
+                    </div>
+                    <div class="service">
+                        <img src="../static/images/parts/{{row["part"]}}.png" alt="" >
+                    </div>
+                </div>
+                <form action="/fav" method="post">
+                    <input name="part_id" hidden value="{{ row["id"] }}">
+                    <div class="add">
+                        <input type="submit" value="Add to Cart"> 
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </div>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

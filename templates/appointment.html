@@ -1,0 +1,21 @@
+{% extends "layout.html" %} {% block title %} appointent {% endblock %} {% block main %}
+<form class="contact_form" action="/appointment" method="post">
+    <div>
+        <input name="name" placeholder="name" type="text">
+    </div>
+    <div>
+        <input name="brand" placeholder="brand" type="text">
+    </div>
+    <div>
+        <input name="date" placeholder="" type="date">
+    </div>
+    <div>
+        <input name="phone" placeholder="phone" type="number">
+    </div>
+    <div class="checkboxes">
+        {% for service in services %}
+        <label><input  name="service" type="checkbox" value="{{ service }}"> {{ service }}</label> {% endfor %}
+    </div>
+    <input class="submit" type="submit" value="make an appointment">
+</form>
+{% endblock%}
